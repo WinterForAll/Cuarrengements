@@ -670,7 +670,7 @@
 
     select {
       cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 0.95rem center;
       padding-right: 2.5rem;
@@ -762,6 +762,23 @@
       .f-submit-row { flex-direction: column; align-items: stretch; }
     }
   </style>
+
+  <script>
+    function toggleDemo(button, demoId) {
+      const demoBar = document.getElementById(demoId);
+      const audio = demoBar.querySelector('audio');
+      
+      if (demoBar.classList.contains('active')) {
+        demoBar.classList.remove('active');
+        audio.pause();
+        button.classList.remove('playing');
+      } else {
+        demoBar.classList.add('active');
+        audio.play();
+        button.classList.add('playing');
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -917,7 +934,7 @@
     </div>
   </section>
 
-  <!-- CATÁLOGO PREMIUM (solo los 4 arreglos de $200, ahora a $160) -->
+  <!-- CATÁLOGO PREMIUM -->
   <section id="catalogo">
     <div class="container">
       <div class="sec-hd fi">
@@ -935,27 +952,38 @@
 
       <div class="cat-grid">
 
-       <!-- 1 - Homenaje a Willie Colón ($200 → $160) -->
-<div class="arr-card fi">
-  <div class="card-top">
-    <img src="https://images.unsplash.com/photo-149322545124-a3b161ffa5f7?w=400&q=70&auto=format" alt="Homenaje a Willie Colón">
-    <span class="clef">𝄞</span>
-    <span class="card-badge">Salsa · Banda</span>
-  </div>
-  <div class="card-body">
-    <span class="card-ens">Banda de Música</span>
-    <h3 class="card-title">Homenaje a Willie Colón</h3>
-    <p class="card-desc">Tributo al icónico trombonista y compositor puertorriqueño Willie Colón, pionero de la salsa.</p>
-    <div class="demo-label">Vista previa · 1 min</div>
-    <button class="demo-btn" onclick="toggleDemo(this,'demo1')">
-      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
-    </button>
-    <div class="demo-bar" id="demo1">
-      <!-- AQUÍ CAMBIAMOS EL ORIGEN DEL AUDIO -->
-      <audio controls src="Audio/Homenaje a Willie Colón.mp3" preload="none"></audio>
-    </div>
-  </div>
-        <!-- 2 — Lavoe y los Blades ($200 → $160) -->
+        <!-- 1 - Homenaje a Willie Colón -->
+        <div class="arr-card fi">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3b161ffa5f7?w=400&q=70&auto=format" alt="Homenaje a Willie Colón" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Salsa · Banda</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Banda de Música</span>
+            <h3 class="card-title">Homenaje a Willie Colón</h3>
+            <p class="card-desc">Tributo al icónico trombonista y compositor puertorriqueño Willie Colón, pionero de la salsa.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo1')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo1">
+              <audio controls src="Audio/Homenaje a Willie Colon.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$200 USD</span>
+                <div class="card-price">$160 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Homenaje%20a%20Willie%20Colon%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 - Lavoe y los Blades -->
         <div class="arr-card fi" style="transition-delay:.08s">
           <div class="card-top">
             <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&q=70&auto=format" alt="Lavoe y los Blades" loading="lazy">
@@ -965,7 +993,7 @@
           <div class="card-body">
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Lavoe y los Blades</h3>
-            <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades). Un recorrido por lo más significativo de cada artista en un solo arreglo.</p>
+            <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades). Un recorrido por lo más significativo de cada artista.</p>
             <div class="demo-label">Vista previa · 1 min</div>
             <button class="demo-btn" onclick="toggleDemo(this,'demo2')">
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
@@ -986,7 +1014,7 @@
           </div>
         </div>
 
-        <!-- 3 — Kimetsu no Yaiba ($200 → $160) -->
+        <!-- 3 - Kimetsu no Yaiba -->
         <div class="arr-card fi" style="transition-delay:.16s">
           <div class="card-top">
             <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=70&auto=format" alt="Kimetsu no Yaiba" loading="lazy">
@@ -996,13 +1024,13 @@
           <div class="card-body">
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Kimetsu no Yaiba Potpurri</h3>
-            <p class="card-desc">Potpurri de los temas más épicos de Demon Slayer. Incluye "Gurenge", "Kamado Tanjirō no Uta", "Homura" y más, adaptadas con toda la intensidad cinematográfica de la serie para el potente sonido de banda.</p>
+            <p class="card-desc">Potpurri de los temas más épicos de Demon Slayer. Incluye "Gurenge", "Kamado Tanjirō no Uta", "Homura" y más, adaptadas con toda la intensidad cinematográfica.</p>
             <div class="demo-label">Vista previa · 1 min</div>
             <button class="demo-btn" onclick="toggleDemo(this,'demo3')">
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
             </button>
             <div class="demo-bar" id="demo3">
-              <audio controls src="Audio/Lavoe y Los Blades remastered.mp3" preload="none"></audio>
+              <audio controls src="Audio/Kimetsu no Yaiba.mp3" preload="none"></audio>
             </div>
             <div class="card-foot">
               <div class="card-price-wrap">
@@ -1017,340 +1045,226 @@
           </div>
         </div>
 
-        <!-- 4 — El Topón ($200 → $160) -->
-        <div class="arr-card fi" style="transition-delay:.24s">
+        <!-- 4 - CTA: Más arreglos -->
+        <div class="arr-card cta-card fi" style="transition-delay:.24s">
           <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?w=400&q=70&auto=format" alt="El Topón Raúl Aparicio" loading="lazy">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Típico · Banda</span>
+            <div class="cta-plus">+</div>
           </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">El Topón — Raúl Aparicio</h3>
-            <p class="card-desc">Arreglo del éxito bailable del acordeonista panameño Raúl Aparicio y su agrupación El Sol Naciente (2022). Música típica panameña con enfoque fresco y danzante, adaptada con energía y carácter a la banda de música.</p>
-            <div class="demo-label">Vista previa · 1 min</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo4')">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
-            </button>
-            <div class="demo-bar" id="demo4">
-             <audio controls src="Audio/El Topón.mp3" preload="none"></audio>
-            <div class="card-foot">
-              <div class="card-price-wrap">
-                <span class="card-price-old">$200 USD</span>
-                <div class="card-price">$160 <small>USD</small></div>
-              </div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22El%20Top%C3%B3n%20by%20Ra%C3%BAl%20Aparicio%22" class="card-buy" target="_blank" rel="noopener">
-                Comprar
-                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
+          <div class="card-body" style="justify-content: center; text-align: center;">
+            <h3 class="card-title">Explorar más</h3>
+            <p class="card-desc">¿No encuentras lo que buscas? Puedo crear un arreglo personalizado para ti.</p>
+            <a href="#solicitar" class="btn btn-gold" style="margin-top: 1.5rem;">
+              Solicitar ahora
+            </a>
           </div>
         </div>
-
-        <!-- CTA personalizado -->
-        <div class="arr-card cta-card fi" style="transition-delay:.32s">
-          <div class="card-top">
-            <div style="text-align:center">
-              <div class="cta-plus">+</div>
-              <p style="font-size:.82rem;color:var(--text-2);max-width:170px;line-height:1.65;margin:0 auto">
-                ¿No encuentras lo que buscas? Pide un arreglo a tu medida.
-              </p>
-            </div>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">A tu medida</span>
-            <h3 class="card-title">Arreglo Personalizado</h3>
-            <p style="font-size:.85rem;color:var(--text-2);line-height:1.75;margin-top:.4rem">
-              Cualquier canción, cualquier género, cualquier instrumentación.
-            </p>
-            <div style="margin-top:auto;padding-top:1rem;border-top:1px solid var(--gold-border);width:100%">
-              <a href="#solicitar" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem">
-                Solicitar Ahora
-                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SOLICITAR ARREGLO -->
+  <!-- REQUEST FORM -->
   <section id="solicitar">
     <div class="container">
       <div class="form-wrap">
-
         <div class="form-info fi">
-          <div class="eyebrow">Arreglo personalizado</div>
-          <h2>¿Tienes una idea<br>en mente?</h2>
-          <p>
-            Cuéntame qué canción quieres, cómo la imaginas y para qué agrupación
-            la necesitas. Respondo en menos de 24 horas con una cotización personalizada,
-            sin compromiso.
-          </p>
+          <div class="eyebrow">¿Listo para empezar?</div>
+          <h2>Solicita tu arreglo</h2>
+          <p>Rellena este formulario con los detalles de tu proyecto. Recibirás una cotización en 24 horas sin ningún compromiso.</p>
 
-          <div class="delivery-box fi" style="transition-delay:.15s">
-            <h4>Qué incluye cada arreglo</h4>
+          <div class="delivery-box">
+            <h4>Entrega include</h4>
             <div class="dlv">
-              <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              PDF con score completo y particellas individuales
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>PDF completo (score + particellas)</span>
             </div>
             <div class="dlv">
-              <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 9l12-2M9 18a3 3 0 01-6 0 3 3 0 016 0zm12-2a3 3 0 01-6 0 3 3 0 016 0z"/></svg>
-              Audio MP3 de referencia en alta calidad
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Audio MP3 de referencia (HQ)</span>
             </div>
             <div class="dlv">
-              <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-              Una ronda de revisión incluida
-            </div>
-            <div class="dlv">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              Entrega en 7–15 días hábiles según complejidad
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>1 ronda de revisiones sin costo</span>
             </div>
           </div>
         </div>
 
-        <div class="fi" style="transition-delay:.2s">
-          <form
-            name="solicitud-arreglo"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="form-card"
-            id="reqForm"
-          >
-            <input type="hidden" name="form-name" value="solicitud-arreglo">
-            <p style="display:none"><label>No llenar: <input name="bot-field"></label></p>
-
-            <div class="f-grid">
-
-              <div class="f-g">
-                <label for="nombre">Nombre completo *</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-              </div>
-
-              <div class="f-g">
-                <label for="email">Correo electrónico *</label>
-                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
-              </div>
-
-              <div class="f-g">
-                <label for="whatsapp">WhatsApp (opcional)</label>
-                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+507 6000-0000">
-              </div>
-
-              <div class="f-g">
-                <label for="agrupacion">Tipo de agrupación *</label>
-                <select id="agrupacion" name="agrupacion" required>
-                  <option value="" disabled selected>Selecciona...</option>
-                  <option>Banda de Concierto</option>
-                  <option>Banda Sinfónica</option>
-                  <option>Orquesta Sinfónica</option>
-                  <option>Orquesta de Cámara</option>
-                  <option>Cuarteto de Cuerdas</option>
-                  <option>Quinteto de Metales</option>
-                  <option>Trío / Cuarteto de Vientos</option>
-                  <option>Ensamble de Guitarras</option>
-                  <option>Piano Solo</option>
-                  <option>Otro (especifica en detalles)</option>
-                </select>
-              </div>
-
-              <div class="f-g full">
-                <label for="cancion">Canción / obra que deseas arreglar *</label>
-                <input type="text" id="cancion" name="cancion" placeholder="Ej: «La Vie en Rose» de Édith Piaf" required>
-              </div>
-
-              <div class="f-g">
-                <label for="g-orig">Género / estilo original</label>
-                <input type="text" id="g-orig" name="genero_original" placeholder="Ej: Bolero, Pop, Clásico…">
-              </div>
-
-              <div class="f-g">
-                <label for="g-dest">Género / estilo deseado</label>
-                <input type="text" id="g-dest" name="genero_deseado" placeholder="Ej: Jazz, Sinfónico, Latino…">
-              </div>
-
-              <div class="f-g">
-                <label for="presupuesto">Presupuesto aproximado</label>
-                <select id="presupuesto" name="presupuesto">
-                  <option value="" disabled selected>Selecciona rango...</option>
-                  <option>Menos de $50 USD</option>
-                  <option>$50 – $100 USD</option>
-                  <option>$100 – $200 USD</option>
-                  <option>Más de $200 USD</option>
-                  <option>Abierto / a cotizar</option>
-                </select>
-              </div>
-
-              <div class="f-g">
-                <label for="fecha">Fecha límite (opcional)</label>
-                <input type="date" id="fecha" name="fecha_limite">
-              </div>
-
-              <div class="f-g full">
-                <label for="detalles">Descripción y detalles adicionales *</label>
-                <textarea
-                  id="detalles"
-                  name="detalles"
-                  placeholder="Describe lo que buscas: tempo, dinámica, cambios específicos, partes que quieres conservar o modificar, nivel de dificultad, número de músicos, etc."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="f-msg" id="fMsg"></div>
-
-              <div class="f-submit-row">
-                <span class="f-note">* Campos obligatorios &mdash; Respuesta en menos de 24&nbsp;h.</span>
-                <button type="submit" class="btn btn-gold" id="fBtn">
-                  Enviar Solicitud
-                  <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                </button>
-              </div>
-
+        <form class="form-card" id="request-form">
+          <div class="f-grid">
+            <div class="f-g">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
             </div>
-          </form>
-        </div>
+            <div class="f-g">
+              <label for="email">Correo</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
 
+            <div class="f-g full">
+              <label for="song">Canción o Tema</label>
+              <input type="text" id="song" name="song" placeholder="Ej: 'Bohemian Rhapsody' o 'Tema original'" required>
+            </div>
+
+            <div class="f-g">
+              <label for="genre">Género</label>
+              <select id="genre" name="genre" required>
+                <option value="">Selecciona un género</option>
+                <option value="salsa">Salsa</option>
+                <option value="jazz">Jazz</option>
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="clasico">Clásico</option>
+                <option value="folklore">Folklore</option>
+                <option value="fusion">Fusión</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="f-g">
+              <label for="ensemble">Agrupación/Ensamble</label>
+              <select id="ensemble" name="ensemble" required>
+                <option value="">Selecciona una agrupación</option>
+                <option value="banda">Banda de Música</option>
+                <option value="orquesta">Orquesta</option>
+                <option value="cuarteto">Cuarteto de Cuerda</option>
+                <option value="jazz-combo">Jazz Combo</option>
+                <option value="big-band">Big Band</option>
+                <option value="vocales">Grupo Vocal</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="f-g full">
+              <label for="requirements">Detalles y preferencias</label>
+              <textarea id="requirements" name="requirements" placeholder="Cuéntame: tonalidad, tempo, arreglista favorito, cambios de género, número de voces, etc. ¡Cuanto más detalle, mejor!"></textarea>
+            </div>
+
+            <div class="f-g full">
+              <label for="deadline">Fecha estimada de entrega</label>
+              <input type="date" id="deadline" name="deadline" required>
+            </div>
+
+            <div class="f-msg" id="form-msg"></div>
+
+            <div class="f-submit-row">
+              <span class="f-note">Los datos serán usados solo para tu cotización. No spam.</span>
+              <button type="submit" class="btn btn-gold">Enviar Solicitud</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- CONTACT -->
   <section id="contacto">
     <div class="container">
       <div class="contact-inner">
-
         <div class="contact-text fi">
-          <div class="eyebrow">Contacto directo</div>
-          <h2>¿Prefieres hablar<br>antes de decidir?</h2>
-          <p>
-            Sin problema. Escríbeme directamente por WhatsApp o correo y conversamos
-            sobre tu proyecto musical sin compromiso alguno.
-          </p>
+          <div class="eyebrow">Ponte en contacto</div>
+          <h2>¿Preguntas? Estoy aquí</h2>
+          <p>Si prefieres contactarme directamente o tienes dudas antes de solicitar, aquí están mis canales. Respondo rápido.</p>
         </div>
 
-        <div class="channels fi" style="transition-delay:.15s">
-          <a
-            href="https://wa.me/50763507762?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20un%20arreglo%20musical"
-            class="channel"
-            target="_blank"
-            rel="noopener"
-          >
+        <div class="channels fi" style="transition-delay:.1s">
+          <a href="https://wa.me/50763507762" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon g">
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M3 21l1.65-5.27A9 9 0 1 1 19 10.3a8.95 8.95 0 0 1-2.25 5.9"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">WhatsApp</span>
               <span class="ch-val">+507 6350-7762</span>
             </div>
-            <span class="ch-arrow">
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
+            <div class="ch-arrow">
+              <svg viewBox="0 0 24 24"><path d="M13 6l6 6-6 6M5 6l6 6-6 6"/></svg>
+            </div>
           </a>
 
-          <a
-            href="mailto:carlospvz11@gmail.com?subject=Consulta%20sobre%20arreglo%20musical"
-            class="channel"
-          >
+          <a href="mailto:contacto@cuarrangements.com" class="channel">
             <div class="ch-icon e">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div class="ch-info">
-              <span class="ch-lbl">Correo Electrónico</span>
-              <span class="ch-val">carlospvz11@gmail.com</span>
+              <span class="ch-lbl">Email</span>
+              <span class="ch-val">contacto@cuarrangements.com</span>
             </div>
-            <span class="ch-arrow">
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
+            <div class="ch-arrow">
+              <svg viewBox="0 0 24 24"><path d="M13 6l6 6-6 6M5 6l6 6-6 6"/></svg>
+            </div>
           </a>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo"><b>CU</b> Arrangements</div>
-      <p class="footer-copy">Arreglos musicales profesionales &mdash; Panam&aacute;</p>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo"><b>CU</b> Arrangements</div>
+        <p class="footer-copy">© 2024 CU Arrangements. Todos los derechos reservados. Panamá 🇵🇦</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    function toggleDemo(btn, id) {
-      const bar = document.getElementById(id);
-      const isActive = bar.classList.contains('active');
-
-      document.querySelectorAll('.demo-bar.active').forEach(b => {
-        b.classList.remove('active');
-        const a = b.querySelector('audio');
-        if (a) { a.pause(); a.currentTime = 0; }
-      });
-      document.querySelectorAll('.demo-btn.playing').forEach(b => {
-        b.classList.remove('playing');
-        b.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo';
-      });
-
-      if (!isActive) {
-        bar.classList.add('active');
-        btn.classList.add('playing');
-        btn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="var(--gold)" stroke="var(--gold)" stroke-width="2"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Pausar Demo';
-        const audio = bar.querySelector('audio');
-        if (audio) { audio.play().catch(() => {}); }
-      }
-    }
-
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
+    // Mobile menu toggle
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fi').forEach(el => io.observe(el));
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
-    const form  = document.getElementById('reqForm');
-    const fBtn  = document.getElementById('fBtn');
-    const fMsg  = document.getElementById('fMsg');
+    // Cerrar menú al hacer click en un link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
 
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      fBtn.disabled = true;
-      fBtn.textContent = 'Enviando…';
-      fMsg.style.display = 'none';
-
-      try {
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString(),
-        });
-
-        if (res.ok) {
-          fMsg.className = 'f-msg ok';
-          fMsg.textContent = '¡Solicitud enviada! Recibirás una respuesta personalizada en menos de 24 horas.';
-          form.reset();
-        } else { throw new Error(); }
-      } catch {
-        fMsg.className = 'f-msg err';
-        fMsg.textContent = 'Hubo un error al enviar. Por favor contáctame directamente por WhatsApp o correo.';
-      } finally {
-        fMsg.style.display = 'block';
-        fBtn.disabled = false;
-        fBtn.innerHTML = 'Enviar Solicitud <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
-        fMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Scroll effect on nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
       }
     });
-  </script>
 
+    // Form submission
+    const form = document.getElementById('request-form');
+    const formMsg = document.getElementById('form-msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      // Simulación de envío (reemplazar con tu backend real)
+      console.log('Formulario enviado:', data);
+
+      formMsg.textContent = '¡Solicitud enviada! Recibirás una respuesta en 24 horas.';
+      formMsg.className = 'f-msg ok';
+      formMsg.style.display = 'block';
+
+      form.reset();
+      setTimeout(() => {
+        formMsg.style.display = 'none';
+      }, 4000);
+    });
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
