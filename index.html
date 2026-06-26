@@ -641,7 +641,7 @@
 
     select {
       cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 0.95rem center;
       padding-right: 2.5rem;
@@ -719,7 +719,7 @@
     }
 
     @media (max-width: 680px) {
-      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 190; }
+      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-border); }
       .nav-links.open { display: flex; }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 0.875rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.92rem; }
@@ -825,7 +825,7 @@
         </div>
 
         <div class="step fi" style="transition-delay:.15s">
-          <div class="step-ring"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+          <div class="step-ring"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h.01M12 16h.01M9 16h.01"/></svg></div>
           <h3>Cotización en 24&nbsp;h</h3>
           <p>Recibirás una cotización personalizada con precio, tiempo de entrega y detalles del arreglo. Sin compromisos. Si aceptas, comenzamos.</p>
         </div>
@@ -850,7 +850,6 @@
 
       <div class="cat-grid">
 
-        <!-- 1 - Homenaje a Willie Colón -->
         <div class="arr-card fi">
           <div class="card-top">
             <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&q=70&auto=format" alt="Homenaje a Willie Colón - Salsa">
@@ -861,17 +860,13 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Homenaje a Willie Colón</h3>
             <p class="card-desc">Tributo al icónico trombonista y compositor puertorriqueño Willie Colón, pionero de la salsa.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo1')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo1"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-homenaje.mp3" type="audio/mpeg"></audio></div>
             <div class="card-foot">
               <div class="card-price">$150 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Homenaje%20a%20Willie%20Col%C3%B3n%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Homenaje%20a%20Willie%20Col%C3%B3n%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
             </div>
           </div>
         </div>
 
-        <!-- 2 - Lavoe y los Blades -->
         <div class="arr-card fi" style="transition-delay:.08s">
           <div class="card-top">
             <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=70&auto=format" alt="Lavoe y los Blades - Salsa Potpurri">
@@ -882,17 +877,13 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Lavoe y los Blades</h3>
             <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades).</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo2')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo2"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-lavoe.mp3" type="audio/mpeg"></audio></div>
             <div class="card-foot">
               <div class="card-price">$150 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Lavoe%20y%20los%20Blades%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Lavoe%20y%20los%20Blades%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
             </div>
           </div>
         </div>
 
-        <!-- 3 - Kimetsu no Yaiba -->
         <div class="arr-card fi" style="transition-delay:.16s">
           <div class="card-top">
             <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&q=70&auto=format" alt="Kimetsu no Yaiba - Anime Band">
@@ -903,160 +894,20 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Kimetsu no Yaiba Potpurri</h3>
             <p class="card-desc">Potpurri de los temas más épicos de Demon Slayer. Incluye "Gurenge", "Kamado Tanjirō no Uta", "Homura" y más.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo3')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo3"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-anime.mp3" type="audio/mpeg"></audio></div>
             <div class="card-foot">
               <div class="card-price">$120 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Potpurri%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Potpurri%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
             </div>
           </div>
         </div>
 
-        <!-- 4 - El Topón -->
-        <div class="arr-card fi" style="transition-delay:.24s">
+        <div class="arr-card cta-card fi" style="transition-delay:.24s">
           <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&q=70&auto=format" alt="El Topón - Música Típica Panameña">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Típico · Banda</span>
+            <div class="cta-plus">+</div>
           </div>
           <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">El Topón — Raúl Aparicio</h3>
-            <p class="card-desc">Arreglo del éxito bailable del acordeonista panameño Raúl Aparicio y su agrupación El Sol Naciente.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo4')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo4"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-topon.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$140 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22El%20Top%C3%B3n%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 - Snowman -->
-        <div class="arr-card fi" style="transition-delay:.32s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&q=70&auto=format" alt="Snowman - Navidad Pop">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Pop · Navidad</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Snowman — Sia</h3>
-            <p class="card-desc">Arreglo para banda del emotivo tema navideño de la artista australiana Sia. Ideal para conciertos de temporada.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo5')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo5"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-snowman.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$80 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Snowman%20by%20Sia%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 - Giving in to the Love -->
-        <div class="arr-card fi" style="transition-delay:.4s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=70&auto=format" alt="Giving in to the Love - Indie">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Indie · Aurora</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Giving in to the Love — Aurora</h3>
-            <p class="card-desc">Arreglo para banda del etéreo tema de la cantautora noruega Aurora, con su sonido atmosférico característico.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo6')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo6"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-aurora.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$90 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Giving%20in%20to%20the%20Love%20by%20Aurora%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7 - Aires de Navidad -->
-        <div class="arr-card fi" style="transition-delay:.48s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=400&q=70&auto=format" alt="Aires de Navidad - Salsa">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Salsa · Navidad</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Aires de Navidad — Lavoe &amp; Colón</h3>
-            <p class="card-desc">Arreglo navideño del emblemático disco "Asalto Navideño", con toda la energía de dos leyendas de la salsa.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo7')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo7"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-navidad.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$110 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Aires%20de%20Navidad%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8 - Entertainment Act -->
-        <div class="arr-card fi" style="transition-delay:.56s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=70&auto=format" alt="Entertainment Act - Potpurri">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Potpurri · Banda</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Entertainment Act</h3>
-            <p class="card-desc">Potpurri: Game of Thrones, "Batman" de Prince y Super Mario Galaxy en un solo arreglo espectacular.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo8')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo8"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-entertainment.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$130 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Entertainment%20Act%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9 - Huapango -->
-        <div class="arr-card fi" style="transition-delay:.64s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&q=70&auto=format" alt="Huapango - Música Tradicional">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Tradicional · Banda</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Huapango for Band</h3>
-            <p class="card-desc">Arreglo del Huapango de Moncayo con toda su energía danzante y colorido llevado al lenguaje de la banda.</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo9')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo9"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-huapango.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$120 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Huapango%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 10 - Disney Medley -->
-        <div class="arr-card fi" style="transition-delay:.72s">
-          <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1518842013791-b874be246c34?w=400&q=70&auto=format" alt="Disney Medley - Cine Animado">
-            <span class="clef">𝄞</span>
-            <span class="card-badge">Disney · Potpurri</span>
-          </div>
-          <div class="card-body">
-            <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Disney Medley</h3>
-            <p class="card-desc">Viaje por el universo Disney: "Las Campanas de Notre Dame", "Into the Unknown" (Frozen 2) e "How Far I'll Go" (Moana).</p>
-            <div class="demo-label">Demo</div>
-            <button class="demo-btn" onclick="toggleDemo(this,'demo10')"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar</button>
-            <div class="demo-bar" id="demo10"><audio controls><source src="https://cdn.pixabay.com/download/audio/2024/02/demo-disney.mp3" type="audio/mpeg"></audio></div>
-            <div class="card-foot">
-              <div class="card-price">$125 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Disney%20Medley%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
+            <h3 class="card-title" style="text-align:center">Más arreglos</h3>
+            <p class="card-desc" style="text-align:center">Tengo más de 10 arreglos listos. Contáctame para ver el catálogo completo.</p>
           </div>
         </div>
 
@@ -1068,58 +919,63 @@
     <div class="container">
       <div class="form-wrap">
         <div class="form-info fi">
-          <div class="eyebrow">Solicitud personalizada</div>
-          <h2>Cuéntame tu proyecto</h2>
-          <p>Rellena el formulario con los detalles de tu arreglo. Responderé en máximo 24 horas con una cotización personalizada.</p>
+          <div class="eyebrow">Solicita tu arreglo</div>
+          <h2>Cuéntame qué necesitas</h2>
+          <p>Completa el formulario con los detalles de tu proyecto y en menos de 24 horas recibirás una cotización personalizada.</p>
+
           <div class="delivery-box">
-            <h4>Entrega incluye:</h4>
-            <div class="dlv"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Score completo en PDF</span></div>
-            <div class="dlv"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Particellas individuales</span></div>
-            <div class="dlv"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Audio MP3 de referencia</span></div>
-            <div class="dlv"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>1 ronda de revisión gratis</span></div>
+            <h4>Entrega incluida</h4>
+            <div class="dlv">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span><strong>PDF Score + Particellas</strong><br>Listo para imprimir</span>
+            </div>
+            <div class="dlv">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span><strong>Audio MP3 HQ</strong><br>De referencia</span>
+            </div>
+            <div class="dlv">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span><strong>Revisión ilimitada</strong><br>Sin costo adicional</span>
+            </div>
           </div>
         </div>
 
         <div class="form-card fi" style="transition-delay:.1s">
-          <form class="f-grid" onsubmit="handleSubmit(event)">
+          <form id="contactForm" class="f-grid">
             <div class="f-g">
-              <label>Nombre</label>
-              <input type="text" name="nombre" placeholder="Tu nombre" required>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
             </div>
             <div class="f-g">
-              <label>Correo electrónico</label>
-              <input type="email" name="email" placeholder="tu@email.com" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
             </div>
             <div class="f-g">
-              <label>Teléfono</label>
-              <input type="tel" name="telefono" placeholder="+507 XXXX-XXXX">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+507 1234 5678" required>
             </div>
             <div class="f-g">
-              <label>Agrupación musical</label>
-              <select name="agrupacion" required>
-                <option value="">Selecciona una opción</option>
-                <option value="banda">Banda</option>
+              <label for="agrupacion">Agrupación</label>
+              <select id="agrupacion" name="agrupacion" required>
+                <option value="">Selecciona...</option>
+                <option value="banda">Banda de Música</option>
                 <option value="orquesta">Orquesta</option>
-                <option value="cuarteto">Cuarteto</option>
-                <option value="conjunto">Conjunto</option>
+                <option value="cuarteto">Cuarteto de Cuerda</option>
+                <option value="ensamble">Ensamble/Combo</option>
                 <option value="otro">Otro</option>
               </select>
             </div>
             <div class="f-g full">
-              <label>¿Qué canción deseas arreglar?</label>
-              <input type="text" name="cancion" placeholder="Título de la canción" required>
+              <label for="cancion">Canción o Tema</label>
+              <input type="text" id="cancion" name="cancion" placeholder="Ej: 'A Thousand Years' - Christina Perri" required>
             </div>
             <div class="f-g full">
-              <label>Descripción del proyecto</label>
-              <textarea name="descripcion" placeholder="Cuéntame con detalle: cambio de género, número de instrumentos, estilo buscado, etc." required></textarea>
+              <label for="detalles">Detalles del arreglo</label>
+              <textarea id="detalles" name="detalles" placeholder="Describe el estilo deseado, cambios de tonalidad, si deseas agregar/quitar secciones, tempo, instrumentación especial, etc." required></textarea>
             </div>
-            <div class="f-g full">
-              <label>Presupuesto estimado (opcional)</label>
-              <input type="text" name="presupuesto" placeholder="Ejemplo: 150 USD">
-            </div>
-            <div class="f-msg" id="msg"></div>
+            <div class="f-msg" id="formMsg"></div>
             <div class="f-submit-row">
-              <span class="f-note">Tus datos se usan solo para contactarte sobre tu solicitud.</span>
+              <p class="f-note">Respuesta garantizada en máximo 24 horas</p>
               <button type="submit" class="btn btn-gold">Enviar solicitud</button>
             </div>
           </form>
@@ -1132,30 +988,35 @@
     <div class="container">
       <div class="contact-inner">
         <div class="contact-text fi">
-          <div class="eyebrow">Ponte en contacto</div>
-          <h2>Hablemos de tu proyecto</h2>
-          <p>¿Preguntas sobre nuestros servicios? ¿Lista de precios? ¿Demos de trabajos anteriores? Estoy aquí para ayudarte. Respondo en máximo 24 horas.</p>
+          <div class="eyebrow">Ubicación</div>
+          <h2>Panamá, Rep. de Panamá</h2>
+          <p>Soy un compositor y arreglista de música basado en Panamá, especializado en arreglos para bandas, orquestas y ensambles de cámara. Disponible para proyectos de cualquier escala.</p>
         </div>
         <div class="channels fi" style="transition-delay:.1s">
-          <a href="https://wa.me/50763507762" target="_blank" rel="noopener" class="channel">
+          <a href="https://wa.me/50763507762" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon g">
-              <svg viewBox="0 0 24 24"><path d="M3 21l1.65-4.95A9.956 9.956 0 013 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-1.682 0-3.29-.423-4.684-1.176L3 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.5 22l5.71-1.47C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.36-3.88-.99l-.28-.15-2.89.75.76-2.89-.15-.28C4.36 14.73 4 13.41 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">WhatsApp</span>
-              <span class="ch-val">+507 6350-7762</span>
+              <span class="ch-val">+507 6350 7762</span>
             </div>
-            <div class="ch-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            <div class="ch-arrow">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
           </a>
-          <a href="mailto:contacto@cuarrangements.com" class="channel">
+
+          <a href="mailto:info@cuarrangements.com" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon e">
               <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div class="ch-info">
-              <span class="ch-lbl">Correo electrónico</span>
-              <span class="ch-val">contacto@cuarrangements.com</span>
+              <span class="ch-lbl">Email</span>
+              <span class="ch-val">info@cuarrangements.com</span>
             </div>
-            <div class="ch-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            <div class="ch-arrow">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
           </a>
         </div>
       </div>
@@ -1166,38 +1027,38 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo"><b>CU</b> Arrangements</div>
-        <div class="footer-copy">© 2024 CU Arrangements. Arreglos musicales profesionales · Panamá</div>
+        <div class="footer-copy">© 2026 CU Arrangements. Arreglos musicales profesionales · Panamá</div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
+    // Navegación móvil
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Scroll nav shadow
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 0) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
     });
 
-    // Mobile menu toggle
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
+    // Observador para animación de entrada
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('vis');
@@ -1205,54 +1066,45 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fi').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.fi').forEach(el => observer.observe(el));
 
-    // Demo button toggle - IMPORTANTE: Sin duplicación de audio
-    function toggleDemo(btn, demoId) {
-      const demoBar = document.getElementById(demoId);
-      const allDemos = document.querySelectorAll('.demo-bar');
-      const allBtns = document.querySelectorAll('.demo-btn');
-      const audio = demoBar.querySelector('audio');
-      
-      // Si ya está reproduciendo, detener
-      if (demoBar.classList.contains('active')) {
-        demoBar.classList.remove('active');
-        btn.classList.remove('playing');
-        audio.pause();
-        return;
-      }
-      
-      // Pausar todos los demás audios
-      allDemos.forEach(d => {
-        d.classList.remove('active');
-        const aud = d.querySelector('audio');
-        if (aud) aud.pause();
-      });
-      allBtns.forEach(b => b.classList.remove('playing'));
-      
-      // Reproducir este
-      demoBar.classList.add('active');
-      btn.classList.add('playing');
-      audio.play();
-    }
+    // Formulario
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
 
-    // Form handling
-    function handleSubmit(e) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const msg = document.querySelector('#msg');
-      
-      msg.className = 'f-msg ok';
-      msg.textContent = '✓ Solicitud enviada correctamente. Recibirás una respuesta en 24 horas.';
-      msg.style.display = 'block';
-      
-      e.target.reset();
-      
-      setTimeout(() => {
-        msg.style.display = 'none';
-      }, 5000);
-    }
+
+      const formData = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        whatsapp: document.getElementById('whatsapp').value,
+        agrupacion: document.getElementById('agrupacion').value,
+        cancion: document.getElementById('cancion').value,
+        detalles: document.getElementById('detalles').value,
+      };
+
+      try {
+        formMsg.textContent = 'Enviando...';
+        formMsg.className = 'f-msg';
+        formMsg.style.display = 'block';
+
+        // Simulamos envío (en producción esto iría a un backend real)
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        formMsg.textContent = '✓ Solicitud enviada. Te contactaré en 24h.';
+        formMsg.className = 'f-msg ok';
+        contactForm.reset();
+
+        setTimeout(() => {
+          formMsg.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        formMsg.textContent = '✗ Error al enviar. Intenta por WhatsApp.';
+        formMsg.className = 'f-msg err';
+      }
+    });
   </script>
+
 </body>
 </html>
