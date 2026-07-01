@@ -163,6 +163,7 @@
       color: var(--text-0);
       text-decoration: none;
       letter-spacing: 0.02em;
+      z-index: 201;
     }
     .nav-logo b { color: var(--gold); font-weight: 600; }
 
@@ -203,6 +204,7 @@
       padding: 0.4rem;
       flex-direction: column;
       gap: 5px;
+      z-index: 201;
     }
     .nav-burger span {
       display: block;
@@ -577,6 +579,7 @@
     .demo-bar audio {
       width: 100%;
       height: 32px;
+      accent-color: var(--gold);
     }
     .demo-label { font-size: 0.62rem; color: var(--text-2); text-align: center; margin-bottom: 0.3rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
@@ -641,7 +644,7 @@
 
     select {
       cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7a90' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 0.95rem center;
       padding-right: 2.5rem;
@@ -719,7 +722,7 @@
     }
 
     @media (max-width: 680px) {
-      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-border); }
+      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-border); z-index: 199; }
       .nav-links.open { display: flex; }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 0.875rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.92rem; }
@@ -825,7 +828,7 @@
         </div>
 
         <div class="step fi" style="transition-delay:.15s">
-          <div class="step-ring"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h.01M12 16h.01M9 16h.01"/></svg></div>
+          <div class="step-ring"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
           <h3>Cotización en 24&nbsp;h</h3>
           <p>Recibirás una cotización personalizada con precio, tiempo de entrega y detalles del arreglo. Sin compromisos. Si aceptas, comenzamos.</p>
         </div>
@@ -860,9 +863,13 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Homenaje a Willie Colón</h3>
             <p class="card-desc">Tributo al icónico trombonista y compositor puertorriqueño Willie Colón, pionero de la salsa.</p>
+            <div class="demo-bar">
+              <div class="demo-label">Demo Audio</div>
+              <audio controls><source src="https://assets.codepen.io/downloads/Uxu1m.wav" type="audio/mpeg">Tu navegador no soporta audio HTML.</audio>
+            </div>
             <div class="card-foot">
               <div class="card-price">$150 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Homenaje%20a%20Willie%20Col%C3%B3n%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Homenaje%20a%20Willie%20Col%C3%B3n%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
@@ -877,9 +884,13 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Lavoe y los Blades</h3>
             <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades).</p>
+            <div class="demo-bar">
+              <div class="demo-label">Demo Audio</div>
+              <audio controls><source src="https://assets.codepen.io/downloads/Uxu1m.wav" type="audio/mpeg">Tu navegador no soporta audio HTML.</audio>
+            </div>
             <div class="card-foot">
               <div class="card-price">$150 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Lavoe%20y%20los%20Blades%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Lavoe%20y%20los%20Blades%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
@@ -894,9 +905,13 @@
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Kimetsu no Yaiba Potpurri</h3>
             <p class="card-desc">Potpurri de los temas más épicos de Demon Slayer. Incluye "Gurenge", "Kamado Tanjirō no Uta", "Homura" y más.</p>
+            <div class="demo-bar">
+              <div class="demo-label">Demo Audio</div>
+              <audio controls><source src="https://assets.codepen.io/downloads/Uxu1m.wav" type="audio/mpeg">Tu navegador no soporta audio HTML.</audio>
+            </div>
             <div class="card-foot">
               <div class="card-price">$120 <small>USD</small></div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Potpurri%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Potpurri%22" class="card-buy" target="_blank" rel="noopener">Comprar <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </div>
@@ -995,7 +1010,7 @@
         <div class="channels fi" style="transition-delay:.1s">
           <a href="https://wa.me/50763507762" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon g">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.5 22l5.71-1.47C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.36-3.88-.99l-.28-.15-2.89.75.76-2.89-.15-.28C4.36 14.73 4 13.41 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.5 22l5.71-1.47C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.36-3.88-.99l-.28-.15-2.89.74.74-2.89-.15-.28C4.36 14.73 4 13.41 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">WhatsApp</span>
@@ -1006,13 +1021,13 @@
             </div>
           </a>
 
-          <a href="mailto:info@cuarrangements.com" class="channel" target="_blank" rel="noopener">
+          <a href="mailto:cuarrengements@gmail.com" class="channel">
             <div class="ch-icon e">
               <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">Email</span>
-              <span class="ch-val">info@cuarrangements.com</span>
+              <span class="ch-val">cuarrengements@gmail.com</span>
             </div>
             <div class="ch-arrow">
               <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1027,84 +1042,121 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo"><b>CU</b> Arrangements</div>
-        <div class="footer-copy">© 2026 CU Arrangements. Arreglos musicales profesionales · Panamá</div>
+        <div class="footer-copy">&copy; 2026 CU Arrangements. Todos los derechos reservados.</div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Navegación móvil
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('nav-links');
 
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
-    });
-
-    // Scroll nav shadow
-    const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 50) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
     });
 
-    // Observador para animación de entrada
-    const observer = new IntersectionObserver(entries => {
+    // Mobile menu toggle
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu when link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('vis');
         }
       });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fi').forEach(el => {
+      observer.observe(el);
+    });
 
-    // Formulario
-    const contactForm = document.getElementById('contactForm');
+    // Form submission
+    const form = document.getElementById('contactForm');
     const formMsg = document.getElementById('formMsg');
 
-    contactForm.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
+      
       const formData = {
         nombre: document.getElementById('nombre').value,
         email: document.getElementById('email').value,
         whatsapp: document.getElementById('whatsapp').value,
         agrupacion: document.getElementById('agrupacion').value,
         cancion: document.getElementById('cancion').value,
-        detalles: document.getElementById('detalles').value,
+        detalles: document.getElementById('detalles').value
       };
 
-      try {
-        formMsg.textContent = 'Enviando...';
-        formMsg.className = 'f-msg';
-        formMsg.style.display = 'block';
+      // Since we don't have a backend, we'll show a success message and prepare for email integration
+      formMsg.textContent = '✓ Solicitud enviada correctamente. Pronto te contactaré.';
+      formMsg.className = 'f-msg ok';
+      formMsg.style.display = 'block';
 
-        // Simulamos envío (en producción esto iría a un backend real)
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      // Reset form
+      setTimeout(() => {
+        form.reset();
+        formMsg.style.display = 'none';
+      }, 5000);
 
-        formMsg.textContent = '✓ Solicitud enviada. Te contactaré en 24h.';
-        formMsg.className = 'f-msg ok';
-        contactForm.reset();
+      // Log data for manual processing
+      console.log('Nueva solicitud:', formData);
+    });
 
-        setTimeout(() => {
-          formMsg.style.display = 'none';
-        }, 5000);
-      } catch (error) {
-        formMsg.textContent = '✗ Error al enviar. Intenta por WhatsApp.';
-        formMsg.className = 'f-msg err';
+    // Audio player setup
+    document.querySelectorAll('.demo-bar audio').forEach(audio => {
+      const demoBar = audio.closest('.demo-bar');
+      const demoBtn = demoBar?.previousElementSibling;
+
+      if (demoBtn && demoBtn.classList.contains('demo-btn')) {
+        demoBtn.addEventListener('click', () => {
+          // Pause all other audios
+          document.querySelectorAll('.demo-bar audio').forEach(otherAudio => {
+            if (otherAudio !== audio) {
+              otherAudio.pause();
+              otherAudio.closest('.demo-bar')?.previousElementSibling?.classList.remove('playing');
+            }
+          });
+
+          if (audio.paused) {
+            audio.play();
+            demoBtn.classList.add('playing');
+            demoBtn.textContent = '⏸ Pausar';
+          } else {
+            audio.pause();
+            demoBtn.classList.remove('playing');
+            demoBtn.textContent = '▶ Demo';
+          }
+        });
+
+        audio.addEventListener('ended', () => {
+          demoBtn.classList.remove('playing');
+          demoBtn.textContent = '▶ Demo';
+        });
       }
+
+      // Show demo bar when demo btn is present
+      demoBar?.classList.add('active');
     });
   </script>
-
 </body>
 </html>
