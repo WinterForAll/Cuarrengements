@@ -751,7 +751,7 @@
     }
 
     @media (max-width: 680px) {
-      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-border); }
+      .nav-links { display: none; position: fixed; inset: 60px 0 auto 0; background: rgba(8,12,20,0.97); flex-direction: column; padding: 1.5rem; gap: 0; backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-border); z-index: 199; }
       .nav-links.open { display: flex; }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 0.875rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.92rem; }
@@ -778,6 +778,18 @@
         button.classList.add('playing');
       }
     }
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const burger = document.getElementById('burger');
+      const navLinks = document.getElementById('nav-links');
+      
+      if (burger) {
+        burger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+      }
+    });
   </script>
 </head>
 <body>
@@ -968,7 +980,7 @@
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
             </button>
             <div class="demo-bar" id="demo1">
-              <audio controls src="Audio/Homenaje a Willie Colon.mp3" preload="none"></audio>
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_willie_colon.mp3" preload="none"></audio>
             </div>
             <div class="card-foot">
               <div class="card-price-wrap">
@@ -993,13 +1005,13 @@
           <div class="card-body">
             <span class="card-ens">Banda de Música</span>
             <h3 class="card-title">Lavoe y los Blades</h3>
-            <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades). Un recorrido por lo más significativo de cada artista.</p>
+            <p class="card-desc">Potpurri que rinde tributo a tres figuras de la salsa: "Plástico" (Rubén Blades), "El Cantante" (Héctor Lavoe) y "Lágrimas" (Roberto Blades).</p>
             <div class="demo-label">Vista previa · 1 min</div>
             <button class="demo-btn" onclick="toggleDemo(this,'demo2')">
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
             </button>
             <div class="demo-bar" id="demo2">
-              <audio controls src="Audio/Lavoe y Los Blades remastered.mp3" preload="none"></audio>
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_lavoe_blades.mp3" preload="none"></audio>
             </div>
             <div class="card-foot">
               <div class="card-price-wrap">
@@ -1014,30 +1026,30 @@
           </div>
         </div>
 
-        <!-- 3 - Kimetsu no Yaiba -->
+        <!-- 3 - El Topón -->
         <div class="arr-card fi" style="transition-delay:.16s">
           <div class="card-top">
-            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=70&auto=format" alt="Kimetsu no Yaiba" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&q=70&auto=format" alt="El Topón" loading="lazy">
             <span class="clef">𝄞</span>
-            <span class="card-badge">Anime · Banda</span>
+            <span class="card-badge">Timba · Banda</span>
           </div>
           <div class="card-body">
             <span class="card-ens">Banda de Música</span>
-            <h3 class="card-title">Kimetsu no Yaiba Potpurri</h3>
-            <p class="card-desc">Potpurri de los temas más épicos de Demon Slayer. Incluye "Gurenge", "Kamado Tanjirō no Uta", "Homura" y más, adaptadas con toda la intensidad cinematográfica.</p>
+            <h3 class="card-title">El Topón</h3>
+            <p class="card-desc">Arreglo de timba cubana con ritmo y energía. Perfecto para bandas que buscan un toque latino moderno y bailable.</p>
             <div class="demo-label">Vista previa · 1 min</div>
             <button class="demo-btn" onclick="toggleDemo(this,'demo3')">
               <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
             </button>
             <div class="demo-bar" id="demo3">
-              <audio controls src="Audio/Kimetsu no Yaiba.mp3" preload="none"></audio>
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_el_topon.mp3" preload="none"></audio>
             </div>
             <div class="card-foot">
               <div class="card-price-wrap">
-                <span class="card-price-old">$200 USD</span>
-                <div class="card-price">$160 <small>USD</small></div>
+                <span class="card-price-old">$180 USD</span>
+                <div class="card-price">$145 <small>USD</small></div>
               </div>
-              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Potpurri%22" class="card-buy" target="_blank" rel="noopener">
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22El%20Topon%22" class="card-buy" target="_blank" rel="noopener">
                 Comprar
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
@@ -1045,108 +1057,316 @@
           </div>
         </div>
 
-        <!-- 4 - CTA: Más arreglos -->
-        <div class="arr-card cta-card fi" style="transition-delay:.24s">
+        <!-- 4 - Kimetsu no Yaiba Pot -->
+        <div class="arr-card fi" style="transition-delay:.24s">
           <div class="card-top">
-            <div class="cta-plus">+</div>
+            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=70&auto=format" alt="Kimetsu no Yaiba Pot" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Anime · Orquesta</span>
           </div>
-          <div class="card-body" style="justify-content: center; text-align: center;">
-            <h3 class="card-title">Explorar más</h3>
-            <p class="card-desc">¿No encuentras lo que buscas? Puedo crear un arreglo personalizado para ti.</p>
-            <a href="#solicitar" class="btn btn-gold" style="margin-top: 1.5rem;">
-              Solicitar ahora
-            </a>
+          <div class="card-body">
+            <span class="card-ens">Orquesta / Banda Sinfónica</span>
+            <h3 class="card-title">Kimetsu no Yaiba Potpurri</h3>
+            <p class="card-desc">Epico potpurri de tema de anime con arreglo orquestal. Incluye movimientos emotivos y momentos climáticos.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo4')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo4">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_kimetsu.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$220 USD</span>
+                <div class="card-price">$175 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Kimetsu%20no%20Yaiba%20Pot%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- 5 - Disney Medley -->
+        <div class="arr-card fi" style="transition-delay:.32s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=70&auto=format" alt="Disney Medley" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Películas · Orquesta</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Banda Sinfónica</span>
+            <h3 class="card-title">Disney Medley</h3>
+            <p class="card-desc">Medley de clásicos de Disney arreglado para banda sinfónica. Momentos mágicos para presentaciones especiales.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo5')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo5">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_disney_medley.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$210 USD</span>
+                <div class="card-price">$168 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Disney%20Medley%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 - Plástic Love -->
+        <div class="arr-card fi" style="transition-delay:.40s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=70&auto=format" alt="Plastic Love" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Vaporwave · Jazz</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Jazz Combo / Ensamble</span>
+            <h3 class="card-title">Plastic Love</h3>
+            <p class="card-desc">Arreglo jazzy del clásico synthwave. Perfecto para conjuntos modernos con sonoridades contemporáneas.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo6')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo6">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_plastic_love.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$170 USD</span>
+                <div class="card-price">$136 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Plastic%20Love%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 - Mi Panamá -->
+        <div class="arr-card fi" style="transition-delay:.48s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=70&auto=format" alt="Mi Panamá" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Folclor · Banda</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Banda de Música</span>
+            <h3 class="card-title">Mi Panamá</h3>
+            <p class="card-desc">Celebración del folclor panameño con ritmos tradicionales arreglados para banda moderna.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo7')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo7">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_mi_panama.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$190 USD</span>
+                <div class="card-price">$152 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Mi%20Panama%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 - Eres -->
+        <div class="arr-card fi" style="transition-delay:.56s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1525888062007-2b551745a25d?w=400&q=70&auto=format" alt="Eres" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Bolero · Orquesta</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Orquesta de Cámara</span>
+            <h3 class="card-title">Eres</h3>
+            <p class="card-desc">Bolero romántico arreglado para orquesta de cámara. Ideal para eventos y conciertos especiales.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo8')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo8">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_eres.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$180 USD</span>
+                <div class="card-price">$144 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Eres%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 - Outer Wilds -->
+        <div class="arr-card fi" style="transition-delay:.64s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&q=70&auto=format" alt="Outer Wilds" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Videojuego · Sinfónico</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Banda Sinfónica</span>
+            <h3 class="card-title">Outer Wilds</h3>
+            <p class="card-desc">Tema épico del videojuego Outer Wilds arreglado para banda sinfónica. Contemplativo y majestuoso.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo9')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo9">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_outer_wilds.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$200 USD</span>
+                <div class="card-price">$160 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Outer%20Wilds%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 - Emborrachame -->
+        <div class="arr-card fi" style="transition-delay:.72s">
+          <div class="card-top">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&q=70&auto=format" alt="Emborrachame" loading="lazy">
+            <span class="clef">𝄞</span>
+            <span class="card-badge">Reggaeton · Banda</span>
+          </div>
+          <div class="card-body">
+            <span class="card-ens">Banda de Música</span>
+            <h3 class="card-title">Emborrachame</h3>
+            <p class="card-desc">Arreglo reggaeton bailable. Energía contagiosa para eventos y actuaciones en vivo.</p>
+            <div class="demo-label">Vista previa · 1 min</div>
+            <button class="demo-btn" onclick="toggleDemo(this,'demo10')">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> Escuchar Demo
+            </button>
+            <div class="demo-bar" id="demo10">
+              <audio controls src="https://raw.githubusercontent.com/WinterForAll/Cuarrengements/main/Audio/demo_emborrachame.mp3" preload="none"></audio>
+            </div>
+            <div class="card-foot">
+              <div class="card-price-wrap">
+                <span class="card-price-old">$150 USD</span>
+                <div class="card-price">$120 <small>USD</small></div>
+              </div>
+              <a href="https://wa.me/50763507762?text=Hola%2C%20me%20interesa%20comprar%20el%20arreglo%20%22Emborrachame%22" class="card-buy" target="_blank" rel="noopener">
+                Comprar
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- REQUEST FORM -->
+  <!-- SOLICITAR ARREGLO -->
   <section id="solicitar">
     <div class="container">
       <div class="form-wrap">
         <div class="form-info fi">
-          <div class="eyebrow">¿Listo para empezar?</div>
-          <h2>Solicita tu arreglo</h2>
-          <p>Rellena este formulario con los detalles de tu proyecto. Recibirás una cotización en 24 horas sin ningún compromiso.</p>
+          <div class="eyebrow">Personalizado</div>
+          <h2>Solicita tu arreglo a medida</h2>
+          <p>Cuéntame sobre tu proyecto musical. Responderé en 24 horas con una cotización detallada y personalizada.</p>
 
           <div class="delivery-box">
-            <h4>Entrega include</h4>
+            <h4>¿Qué recibirás?</h4>
             <div class="dlv">
               <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>PDF completo (score + particellas)</span>
+              <span><strong>Score completo</strong> en PDF editable</span>
             </div>
             <div class="dlv">
               <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>Audio MP3 de referencia (HQ)</span>
+              <span><strong>Particellas individuales</strong> para cada instrumento</span>
             </div>
             <div class="dlv">
               <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <span>1 ronda de revisiones sin costo</span>
+              <span><strong>Audio de referencia</strong> en MP3 de alta calidad</span>
+            </div>
+            <div class="dlv">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span><strong>1 ronda de revisión</strong> sin costo adicional</span>
             </div>
           </div>
         </div>
 
-        <form class="form-card" id="request-form">
+        <form class="form-card fi" style="transition-delay:.1s" name="contact" method="POST" netlify>
           <div class="f-grid">
             <div class="f-g">
               <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="f-g">
-              <label for="email">Correo</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
-
             <div class="f-g full">
-              <label for="song">Canción o Tema</label>
-              <input type="text" id="song" name="song" placeholder="Ej: 'Bohemian Rhapsody' o 'Tema original'" required>
+              <label for="project">Nombre del proyecto / Agrupación</label>
+              <input type="text" id="project" name="project" placeholder="Ej: Banda Filarmónica del Caribe" required>
             </div>
-
+            <div class="f-g full">
+              <label for="song">Canción a arreglar</label>
+              <input type="text" id="song" name="song" placeholder="Nombre de la canción o compositor" required>
+            </div>
             <div class="f-g">
-              <label for="genre">Género</label>
-              <select id="genre" name="genre" required>
-                <option value="">Selecciona un género</option>
-                <option value="salsa">Salsa</option>
-                <option value="jazz">Jazz</option>
-                <option value="pop">Pop</option>
-                <option value="rock">Rock</option>
-                <option value="clasico">Clásico</option>
-                <option value="folklore">Folklore</option>
-                <option value="fusion">Fusión</option>
-                <option value="otro">Otro</option>
+              <label for="style">Estilo deseado</label>
+              <select id="style" name="style" required>
+                <option value="">Selecciona un estilo...</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Salsa">Salsa</option>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Clásico">Clásico</option>
+                <option value="Timba">Timba</option>
+                <option value="Reggaeton">Reggaeton</option>
+                <option value="Bolero">Bolero</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
-
             <div class="f-g">
-              <label for="ensemble">Agrupación/Ensamble</label>
+              <label for="ensemble">Agrupación / Instrumentación</label>
               <select id="ensemble" name="ensemble" required>
-                <option value="">Selecciona una agrupación</option>
-                <option value="banda">Banda de Música</option>
-                <option value="orquesta">Orquesta</option>
-                <option value="cuarteto">Cuarteto de Cuerda</option>
-                <option value="jazz-combo">Jazz Combo</option>
-                <option value="big-band">Big Band</option>
-                <option value="vocales">Grupo Vocal</option>
-                <option value="otro">Otro</option>
+                <option value="">Selecciona...</option>
+                <option value="Banda de Música">Banda de Música</option>
+                <option value="Banda Sinfónica">Banda Sinfónica</option>
+                <option value="Orquesta Sinfónica">Orquesta Sinfónica</option>
+                <option value="Jazz Combo">Jazz Combo</option>
+                <option value="Orquesta de Cámara">Orquesta de Cámara</option>
+                <option value="Cuarteto de Cuerdas">Cuarteto de Cuerdas</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
-
             <div class="f-g full">
-              <label for="requirements">Detalles y preferencias</label>
-              <textarea id="requirements" name="requirements" placeholder="Cuéntame: tonalidad, tempo, arreglista favorito, cambios de género, número de voces, etc. ¡Cuanto más detalle, mejor!"></textarea>
+              <label for="details">Detalles del arreglo</label>
+              <textarea id="details" name="details" placeholder="Cuéntame sobre el arreglo que necesitas. ¿Qué cambios quieres? ¿Tempo? ¿Tonalidad? ¿Duración aproximada?" required></textarea>
             </div>
-
             <div class="f-g full">
-              <label for="deadline">Fecha estimada de entrega</label>
-              <input type="date" id="deadline" name="deadline" required>
+              <label for="budget">Presupuesto aproximado (opcional)</label>
+              <input type="text" id="budget" name="budget" placeholder="Ej: $150 - $200 USD">
             </div>
 
             <div class="f-msg" id="form-msg"></div>
 
             <div class="f-submit-row">
-              <span class="f-note">Los datos serán usados solo para tu cotización. No spam.</span>
+              <p class="f-note">Aceptas nuestra política de privacidad. Responderé en 24 horas.</p>
               <button type="submit" class="btn btn-gold">Enviar Solicitud</button>
             </div>
           </div>
@@ -1155,40 +1375,40 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACTO -->
   <section id="contacto">
     <div class="container">
       <div class="contact-inner">
         <div class="contact-text fi">
-          <div class="eyebrow">Ponte en contacto</div>
-          <h2>¿Preguntas? Estoy aquí</h2>
-          <p>Si prefieres contactarme directamente o tienes dudas antes de solicitar, aquí están mis canales. Respondo rápido.</p>
+          <div class="eyebrow">Conecta conmigo</div>
+          <h2>¿Preguntas? Contáctame</h2>
+          <p>Estoy disponible para consultas, cotizaciones y proyectos especiales. Elige tu canal de comunicación preferido.</p>
         </div>
 
         <div class="channels fi" style="transition-delay:.1s">
           <a href="https://wa.me/50763507762" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon g">
-              <svg viewBox="0 0 24 24"><path d="M3 21l1.65-5.27A9 9 0 1 1 19 10.3a8.95 8.95 0 0 1-2.25 5.9"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">WhatsApp</span>
               <span class="ch-val">+507 6350-7762</span>
             </div>
             <div class="ch-arrow">
-              <svg viewBox="0 0 24 24"><path d="M13 6l6 6-6 6M5 6l6 6-6 6"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
 
-          <a href="mailto:contacto@cuarrangements.com" class="channel">
+          <a href="mailto:info@cuarrangements.com" class="channel" target="_blank" rel="noopener">
             <div class="ch-icon e">
               <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div class="ch-info">
               <span class="ch-lbl">Email</span>
-              <span class="ch-val">contacto@cuarrangements.com</span>
+              <span class="ch-val">info@cuarrangements.com</span>
             </div>
             <div class="ch-arrow">
-              <svg viewBox="0 0 24 24"><path d="M13 6l6 6-6 6M5 6l6 6-6 6"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -1201,28 +1421,31 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo"><b>CU</b> Arrangements</div>
-        <p class="footer-copy">© 2024 CU Arrangements. Todos los derechos reservados. Panamá 🇵🇦</p>
+        <div class="footer-copy">© 2024 CU Arrangements. Todos los derechos reservados.</div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
+    // Intersection Observer para animaciones
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
 
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    // Cerrar menú al hacer click en un link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+        }
       });
+    }, observerOptions);
+
+    document.querySelectorAll('.fi').forEach(el => {
+      observer.observe(el);
     });
 
-    // Scroll effect on nav
+    // Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
@@ -1232,39 +1455,20 @@
       }
     });
 
-    // Form submission
-    const form = document.getElementById('request-form');
-    const formMsg = document.getElementById('form-msg');
+    // Mobile menu
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      // Simulación de envío (reemplazar con tu backend real)
-      console.log('Formulario enviado:', data);
-
-      formMsg.textContent = '¡Solicitud enviada! Recibirás una respuesta en 24 horas.';
-      formMsg.className = 'f-msg ok';
-      formMsg.style.display = 'block';
-
-      form.reset();
-      setTimeout(() => {
-        formMsg.style.display = 'none';
-      }, 4000);
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
     });
 
-    // Intersection Observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('vis');
-        }
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
       });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>
